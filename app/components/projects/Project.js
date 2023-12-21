@@ -1,0 +1,54 @@
+"use client";
+import classes from './project.module.css'
+import Image from "next/image";
+import { useState } from "react";
+function Project({images : projectImages, title : projectTItle, large = false}) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const changeMainImg = (imgIndex) => {
+    setActiveIndex(imgIndex);
+  };
+  return (
+    <div className={`${classes.project_page} fade_in`}>
+      <h3 className={`responsive_text md:text-base inline-block py-2 px-4 rounded-sm  project_title`}>
+        {projectTItle}
+      </h3>
+      <div className={`${classes.project_images}`}>
+        <div className={`${classes.main_img_wrapper}`}>
+          <Image
+            className={`rounded-sm shadow-md ${classes.main_img} ${large ? classes.large_main_img : ''}`}
+            width={1000}
+            height={600}
+            src={projectImages[activeIndex].src}
+            alt={projectTItle}
+            sizes="(max-width: 600px) 80vw, (max-width: 1200px) 70vw, 70vw"
+            placeholder='blur'
+            blurDataURL={projectImages[activeIndex].placeholder}
+          />
+        </div>
+        <div className={`${classes.preview_images}`}>
+          {projectImages.map((img, i) => {
+            return (
+              <div>
+                <Image
+                placeholder='blur'
+                blurDataURL={img.placeholder}
+                  onClick={() => changeMainImg(i)}
+                  className={`${
+                    activeIndex === i ? classes.active_img : ""
+                  }`}
+                  key={i}
+                  width={400}
+                  height={400}
+                  src={img.src}
+                  alt={img.alt}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Project;

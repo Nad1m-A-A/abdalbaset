@@ -1,0 +1,86 @@
+.project_page h3 {
+    position: sticky;
+    top: 9%;
+    margin-bottom: 0.125rem;
+}
+
+.main_img_wrapper {
+    max-width: 75%;
+}
+.main_img {
+    position: sticky;
+    top: 9%;
+}
+
+.large_main_img {
+    max-height: 70%;
+    object-fit: cover;
+}
+.project_images {
+    display: flex;
+    gap: .3rem;
+}
+
+.preview_images {
+    max-width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.preview_images div{
+    cursor: pointer;
+    max-height: 6rem;
+    border-radius: 2px;
+    box-shadow: 0 0 1px black;
+}
+
+.preview_images div img {
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.preview_images div:hover img{
+    opacity: 1;
+    transition: 300ms all;
+    transition-delay: 100ms;
+
+}
+.preview_images div:not(:hover) img{
+    opacity: .4;
+    transition: 300ms all;
+    transition-delay: 100ms;
+}
+
+.preview_images div:not(:hover) img.active_img{
+    opacity: 1;
+}
+
+@media screen and (max-width: 599px) {
+    .project_page h3 {
+        position: static;
+    }
+    .main_img_wrapper {
+        max-width: 100%;
+    }
+    .project_images {
+        flex-direction: column-reverse;
+    }
+    .preview_images {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        flex-wrap: wrap;
+    }
+    .preview_images div{
+        max-height: 3rem;
+    }
+    
+}
+
+@media screen and (max-width: 399px) {
+    .preview_images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

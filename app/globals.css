@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* £ CUSTOM STYLES */
+.nav_li_style {
+    @apply flex items-center justify-end gap-2 py-1;
+}
+.li_line {
+    height: .1rem;
+}
+
+.preview_img, .my_map {
+    box-shadow: 0px 0px 3px gray;
+}
+
+.responsive_text {
+    font-size: 2.5vw;
+}
+.responsive_icon {
+    width: 5vw;
+    height: 5vh;
+}
+
+.contact_info .popslide {
+    position: absolute;
+    max-height: 100%;
+    background: linear-gradient(90deg, rgb(235, 235, 235), rgb(211, 211, 211));
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: .8rem;
+    text-decoration: underline;
+    color: transparent;
+    overflow: hidden;
+    width: 0%;
+    transition: 400ms;
+}
+
+.contact_info:hover .popslide {
+    padding-inline: .8rem;
+    width: 100%;
+    color: rgb(40, 40, 255);
+}
+
+.service_title, .project_title {
+    background: linear-gradient(90deg, rgb(255, 252, 252), rgb(211, 211, 211)); 
+}
+
+
+.journey_desc {
+    background: linear-gradient(155deg, transparent 30%, black);
+}
+
+.project_prev_container {
+    max-height: 10rem;
+}
+
+.project_prev {
+    transition: 400ms;
+
+}
+/* £ CUSTOM STYLES */
+
+/* ? ANIMATION */
+.home_img{
+    animation: ping 500ms ease-out;
+}
+.fade_in {
+    animation: ping 500ms ease-out;
+}
+
+.animate_out span {
+    animation: animate_out .8s;
+}
+.animate_out h1{
+    animation: animate_out .8s;
+}
+.animate_out p{
+    animation: animate_out .8s;
+}
+.animate_in span {
+    animation: animate_in .8s;
+}
+.animate_in h1{
+    animation: animate_in .8s;
+}
+.animate_in p{
+    animation: animate_in .8s;
+}
+@keyframes animate_out {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {        
+        transform: scale(.6);
+        opacity: 0;
+    }
+}
+@keyframes animate_in {
+    from {
+        transform: scale(.6);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes ping {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* ? ANIMATION */
