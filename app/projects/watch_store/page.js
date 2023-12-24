@@ -5,18 +5,22 @@ function WatchStore() {
     {
       alt: "watch store",
       src: "/images/watch_store/1.webp",
+      placeholder: "/images/watch_store/low_1.webp",
     },
     {
       alt: "watch store",
       src: "/images/watch_store/2.webp",
+      placeholder: "/images/watch_store/low_2.webp",
     },
     {
       alt: "watch store",
       src: "/images/watch_store/3.webp",
+      placeholder: "/images/watch_store/low_3.webp",
     },
     {
       alt: "watch store",
       src: "/images/watch_store/4.webp",
+      placeholder: "/images/watch_store/low_4.webp",
     },
     
   ];

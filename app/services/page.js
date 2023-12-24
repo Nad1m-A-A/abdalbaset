@@ -3,11 +3,11 @@ export default function ServicesPage() {
   const services = [
     {
       title: "Facades design",
-      image: "/images/services/services-facade.jpg",
+      image: "/images/facade_2/2.webp",
     },
     {
       title: "Interior design",
-      image: "/images/services/services-interior2.jpg",
+      image: "/images/apartment/3.webp ",
     },
     {
       title: "Architectural plans",
@@ -15,7 +15,7 @@ export default function ServicesPage() {
     },
     {
       title: "Landscapes",
-      image: "/images/services/services-landscape.jpg",
+      image: "/images/landscape/up.webp",
     },
   ];
   return (

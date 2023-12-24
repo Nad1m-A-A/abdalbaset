@@ -1,20 +1,20 @@
 "use client";
-import NextImg from "next/image";
+import Image from "next/image";
 import { useState } from "react";
 function Preview() {
   const images = [
-    { src: "/images/prev/front-villa-prev.jpg", alt: "front villa" },
-    { src: "/images/prev/resort-prev.jpg", alt: "resort" },
-    { src: "/images/prev/mall-prev.jpg", alt: "mall" },
-    { src: "/images/prev/terrace-prev.jpg", alt: "terrace" },
-    { src: "/images/prev/landscape-prev.jpg", alt: "landscape" },
-    { src: "/images/prev/side-villa-prev.jpg", alt: "side villa" },
-    { src: "/images/prev/plants-shop-prev.jpg", alt: "plants shop" },
+    { src: "/images/apartment/5.webp", alt: "walk-in closet" },
+    { src: "/images/facade_1/1.webp", alt: "villa facade" },
+    { src: "/images/facade_2/3.webp", alt: "villa facade" },
+    { src: "/images/landscape/1.webp", alt: "landscape" },
+    { src: "/images/nostalgic/1.webp", alt: "nostalgic room with statues" },
+    { src: "/images/terrace/5.webp", alt: "terrace" },
+    { src: "/images/plant_store/2.webp", alt: "plants shop" },
   ];
   const [imgNumber, setImgNumber] = useState(0);
   const [imgAnimation, setImgAnimation] = useState("");
   const imgClickHandler = () => {
-    setImgAnimation("home_img");
+    setImgAnimation("home_img_animatioin");
     setImgNumber((prev) => (prev + 1) % images.length);
     setTimeout(() => {
       setImgAnimation("");
@@ -22,29 +22,26 @@ function Preview() {
   };
   return (
     <div className="lg:self-start fade_in">
-      <NextImg
-      draggable={false}
+      <Image
+        draggable={false}
         className={`${imgAnimation} mx-auto rounded-sm cursor-pointer preview_img`}
         onClick={imgClickHandler}
         src={images[imgNumber].src}
         alt={images[imgNumber].alt}
         width={700}
         height={400}
-        sizes="(max-width: 600px) 50vw, (max-width: 1200px) 80vw, 80vw"
-        // priority // what about this?
       />
       <div className="invisible">
         {images.map((img, i) => {
           return (
-            <NextImg
-            key={i}
-            src={img.src}
-            alt={img.alt}
-            width={0}
-            height={0}
-            sizes="(max-width: 600px) 50vw, (max-width: 1200px) 50vw, 100vw"
-          />
-          )
+            <Image
+              key={i}
+              src={img.src}
+              alt={img.alt}
+              width={0}
+              height={0}
+            />
+          );
         })}
       </div>
     </div>

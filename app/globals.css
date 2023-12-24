@@ -12,6 +12,7 @@
 
 .preview_img, .my_map {
     box-shadow: 0px 0px 3px gray;
+    border-bottom-left-radius: 40px;
 }
 
 .responsive_text {
@@ -46,23 +47,26 @@
     background: linear-gradient(90deg, rgb(255, 252, 252), rgb(211, 211, 211)); 
 }
 
+.journey_img {
+    min-height: 100%;
+}
 
 .journey_desc {
     background: linear-gradient(155deg, transparent 30%, black);
 }
 
-.project_prev_container {
+.project_prev {
     max-height: 10rem;
+    transition: 400ms;
 }
 
 .project_prev {
-    transition: 400ms;
-
 }
+
 /* £ CUSTOM STYLES */
 
 /* ? ANIMATION */
-.home_img{
+.home_img_animatioin{
     animation: ping 500ms ease-out;
 }
 .fade_in {

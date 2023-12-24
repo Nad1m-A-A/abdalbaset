@@ -4,6 +4,9 @@
     margin-bottom: 0.125rem;
 }
 
+.project_page {
+    padding-bottom: 6.3rem;
+}
 .main_img_wrapper {
     max-width: 75%;
 }
@@ -15,6 +18,7 @@
 .large_main_img {
     max-height: 70%;
     object-fit: cover;
+    object-position: bottom;
 }
 .project_images {
     display: flex;

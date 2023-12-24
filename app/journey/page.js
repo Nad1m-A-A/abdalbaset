@@ -53,14 +53,16 @@ function JourneyPage() {
   };
 
   return (
-    <div className="flex gap-6 flex-col md:flex-row justify-center items-center md:items-start fade_in">
-      <div className="overflow-hidden w-fit rounded-sm shadow-lg relative">
+    <div className="testico flex gap-6 flex-col md:flex-row justify-center items-center md:items-start fade_in">
+      <div className=" overflow-hidden w-fit rounded-sm shadow-lg relative">
         <Image
+        className="journey_img"
           src="/images/building.webp"
           alt="Fascinating building"
           width={400}
           height={400}
-          sizes="(max-width: 600px) 80vw, (max-width: 1200px) 40vw, 40vw"
+          placeholder="blur"
+          blurDataURL="/images/low_building.webp"
         />
         <div className={`flex flex-col justify-end absolute z-20 p-4 pb-10 left-0 right-0 top-0 bottom-0 journey_description text-white text-right journey_desc ${animateOut ? 'animate_out': 'animate_in'}`}>
           <span className=" text-xs sm:text-sm md:text-lg">{timelineItems[selectedYear].year}</span>
