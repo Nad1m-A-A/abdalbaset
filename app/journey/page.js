@@ -53,10 +53,9 @@ function JourneyPage() {
   };
 
   return (
-    <div className="testico flex gap-6 flex-col md:flex-row justify-center items-center md:items-start fade_in">
-      <div className=" overflow-hidden w-fit rounded-sm shadow-lg relative">
+    <div className="flex gap-6 flex-col md:flex-row justify-center items-center md:items-start fade_in scale-90 sm:scale-75 md:scale-100">
+      <div className="overflow-hidden w-fit rounded-sm relative journey_img_container">
         <Image
-        className="journey_img"
           src="/images/building.webp"
           alt="Fascinating building"
           width={400}
@@ -64,7 +63,7 @@ function JourneyPage() {
           placeholder="blur"
           blurDataURL="/images/low_building.webp"
         />
-        <div className={`flex flex-col justify-end absolute z-20 p-4 pb-10 left-0 right-0 top-0 bottom-0 journey_description text-white text-right journey_desc ${animateOut ? 'animate_out': 'animate_in'}`}>
+        <div className={`flex flex-col justify-end absolute z-20 p-4 pb-10 left-0 right-0 top-0 bottom-0 text-light text-right journey_desc ${animateOut ? 'animate_out': 'animate_in'}`}>
           <span className=" text-xs sm:text-sm md:text-lg">{timelineItems[selectedYear].year}</span>
           <h1 className="font-semibold sm:text-xl md:text-2xl">
             {timelineItems[selectedYear].title}
@@ -84,22 +83,22 @@ function JourneyPage() {
               xmlns="http://www.w3.org/2000/svg"
               height="40"
               viewBox="0 -960 960 960"
-              width="40"
+              width="34"
             >
               <path d="m296-345-56-56 240-240 240 240-56 56-184-184-184 184Z" />
             </svg>
           </li>
-          <li className={`cursor-pointer ${selectedYear === 2020 ? 'font-bold' : 'text-gray-400'}`} onClick={() => setSelectedYear(2020)}>2020</li>
-          <li className={`cursor-pointer ${selectedYear === 2021 ? 'font-bold' : 'text-gray-400'}`} onClick={() => setSelectedYear(2021)}>2021</li>
-          <li className={`cursor-pointer ${selectedYear === 2022 ? 'font-bold' : 'text-gray-400'}`} onClick={() => setSelectedYear(2022)}>2022</li>
-          <li className={`cursor-pointer ${selectedYear === 2023 ? 'font-bold' : 'text-gray-400'}`} onClick={() => setSelectedYear(2023)}>2023</li>
+          <li className={`cursor-pointer ${selectedYear === 2020 ? 'font-bold text-dark' : 'text-light'}`} onClick={() => setSelectedYear(2020)}>2020</li>
+          <li className={`cursor-pointer ${selectedYear === 2021 ? 'font-bold text-dark' : 'text-light'}`} onClick={() => setSelectedYear(2021)}>2021</li>
+          <li className={`cursor-pointer ${selectedYear === 2022 ? 'font-bold text-dark' : 'text-light'}`} onClick={() => setSelectedYear(2022)}>2022</li>
+          <li className={`cursor-pointer ${selectedYear === 2023 ? 'font-bold text-dark' : 'text-light'}`} onClick={() => setSelectedYear(2023)}>2023</li>
           <li>
             <svg
               className="cursor-pointer -rotate-90 md:rotate-0" onClick={() => handleSlide('down')}
               xmlns="http://www.w3.org/2000/svg"
               height="40"
               viewBox="0 -960 860 960"
-              width="40"
+              width="34"
             >
               <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
             </svg>

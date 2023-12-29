@@ -63,7 +63,6 @@ function page() {
               <div className="overflow-hidden project_prev_container">
                 <Image
                   className="project_prev select-none group-hover:scale-110 max-h-56 object-cover"
-                  sizes="(max-width: 600px) 70vw, (max-width: 1200px) 40vw, 40vw"
                   alt={project.title}
                   src={project.image}
                   placeholder='blur'

@@ -10,7 +10,7 @@ function Phone({ phoneNumber }) {
       onClick={handlePhoneClick}
     >
       <svg
-        className="fill-gray-600"
+        className="fill-dark"
         xmlns="http://www.w3.org/2000/svg"
         height="23"
         viewBox="0 -960 960 960"

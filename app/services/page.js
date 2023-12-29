@@ -19,7 +19,7 @@ export default function ServicesPage() {
     },
   ];
   return (
-    <div>
+    <div className="m-auto">
       <div className="w-fit mb-8 m-auto">
         <h3 className="text-right p-1 px-3 mb-1 rounded-sm w-fit ml-auto text-sm sm:text-base service_title">
           3D Videos
@@ -44,7 +44,6 @@ export default function ServicesPage() {
                 alt={service.title}
                 width={440}
                 height={250}
-                sizes="(max-width: 600px) 50vw, (max-width: 1200px) 30vw, 30vw"
               />
             </div>
           );

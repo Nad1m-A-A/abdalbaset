@@ -2,17 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* £ CUSTOM STYLES */
-.nav_li_style {
-    @apply flex items-center justify-end gap-2 py-1;
-}
-.li_line {
-    height: .1rem;
+:root {
+    --primary-color: #d6b210;
+    --dark-color: #343434;
+    --light-color: #d3d3d3;
 }
 
-.preview_img, .my_map {
+/* £ CUSTOM STYLES */
+.responsive_dropdown {
+    width: 80vw;
+}
+.home_preview_img, .my_map, .journey_img_container {
     box-shadow: 0px 0px 3px gray;
-    border-bottom-left-radius: 40px;
+    border-bottom-left-radius: 50px;
 }
 
 .responsive_text {
@@ -26,7 +28,7 @@
 .contact_info .popslide {
     position: absolute;
     max-height: 100%;
-    background: linear-gradient(90deg, rgb(235, 235, 235), rgb(211, 211, 211));
+    background: linear-gradient(90deg, white, var(--light-color));
     border-radius: 2px;
     font-weight: bold;
     font-size: .8rem;
@@ -40,16 +42,75 @@
 .contact_info:hover .popslide {
     padding-inline: .8rem;
     width: 100%;
-    color: rgb(40, 40, 255);
+    color: #21209C;
 }
 
 .service_title, .project_title {
-    background: linear-gradient(90deg, rgb(255, 252, 252), rgb(211, 211, 211)); 
+    background: linear-gradient(-90deg, white, var(--light-color));
 }
 
-.journey_img {
-    min-height: 100%;
+body {
+    background: linear-gradient(140deg, transparent 70%, rgba(197, 191, 102, 0.438));
+    overflow-x: hidden;
 }
+
+.testico {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 -2px 15px var(--dark-color);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative;
+    text-transform: capitalize;
+    animation: settle 2s;
+}
+
+.testico::after {
+    content: '';
+    position: absolute;
+    width: 94%;
+    height: .07rem;
+    left: 3%;
+    top: 55%;
+    z-index: -10;
+    background-color: var(--primary-color);
+    animation: race 1.5s ease-in;
+}
+
+@keyframes settle {
+    0% {
+        transform: scale(5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes race {
+    from {
+        width: 0%;
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+        width: 94%;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: .7rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--dark-color);
+    border-radius: 3px;
+}
+
 
 .journey_desc {
     background: linear-gradient(155deg, transparent 30%, black);
@@ -59,14 +120,10 @@
     max-height: 10rem;
     transition: 400ms;
 }
-
-.project_prev {
-}
-
 /* £ CUSTOM STYLES */
 
 /* ? ANIMATION */
-.home_img_animatioin{
+.home_img_animation{
     animation: ping 500ms ease-out;
 }
 .fade_in {
