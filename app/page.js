@@ -22,9 +22,9 @@ export const petit = Petit_Formal_Script({
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-end gap-8">
+    <div className="flex flex-col items-center lg:items-end gap-8">
       <PreviewImg />
-      <h1 className={`${italiana.className} testico p-2 mb-40 lg:text-right sm:text-3xl md:text-4xl lg:text-4xl`}>
+      <h1 className={`${italiana.className} home_phrase p-2 mb-40 lg:text-right text-xl sm:text-3xl md:text-4xl lg:text-4xl`}>
         We are the path to your dream.
       </h1>
     </div>

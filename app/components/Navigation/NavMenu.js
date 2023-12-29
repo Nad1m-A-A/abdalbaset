@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ResponsiveDropDown from "./ResponsiveDropDown";
 import ResponsiveProjectsLink from "./ResponsiveProjectsLinks";
+import { useState } from "react";
 
 function NavMenu({ navVisibility, onItemClick }) {
   const pages = [
@@ -10,19 +11,19 @@ function NavMenu({ navVisibility, onItemClick }) {
   ];
   return (
     <ul
-      className={`${navVisibility} flex justify-around items-center rounded-sm shadow-sm absolute top-0 left-0 bottom-0 right-0 bg-slate-100 md:text-base responsive_text`}
+      className={`fade_in flex justify-around items-center rounded-sm shadow-sm absolute top-0 left-0 bottom-0 right-0 bg-main border-gray-900 border-2 md:text-base responsive_text`}
     >
-      <ResponsiveProjectsLink/>
+      <ResponsiveProjectsLink onItemClick={onItemClick}/>
       {pages.map((page, i) => {
         return (
-          <li key={i} onClick={() => onItemClick("hidden")}>
+          <li key={i} onClick={() => onItemClick()}>
             <Link href={page.url}>{page.text}</Link>
           </li>
         );
       })}
-      <li onClick={() => onItemClick("hidden")}>
+      <li onClick={() => onItemClick()}>
         <svg
-          className="responsive_icon"
+          className="responsive_icon fill-main"
           xmlns="http://www.w3.org/2000/svg"
           height="32"
           viewBox="0 -960 960 960"

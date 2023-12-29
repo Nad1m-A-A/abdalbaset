@@ -27,7 +27,7 @@ function Project({images : projectImages, title : projectTItle, large = false}) 
         <div className={`${classes.preview_images}`}>
           {projectImages.map((img, i) => {
             return (
-              <div className={classes.preview_images_animation }>
+              <div key={i} className={classes.preview_images_animation }>
                 <Image
                 placeholder='blur'
                 blurDataURL={img.placeholder}

@@ -13,7 +13,7 @@ function ResponsiveDropDown({hideDropDown}) {
     { text: "watch store", url: "/projects/watch_store" },
   ];
   return (
-    <ul className="responsive_dropdown absolute top-8 bg-slate-200 grid grid-cols-4 gap-3 px-5 py-3 rounded-sm shadow-lg">
+    <ul className="responsive_dropdown fade_in absolute top-8 bg-gray-900 text-white grid grid-cols-4 gap-3 px-5 py-3 rounded-sm shadow-lg">
       {projects.map((project, i) => {
         return (
           <li key={i} onClick={hideDropDown}>
