@@ -1,7 +1,5 @@
 import Link from "next/link";
-import ResponsiveDropDown from "./ResponsiveDropDown";
 import ResponsiveProjectsLink from "./ResponsiveProjectsLinks";
-import { useState } from "react";
 
 function NavMenu({ navVisibility, onItemClick }) {
   const pages = [

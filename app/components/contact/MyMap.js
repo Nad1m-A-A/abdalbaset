@@ -32,7 +32,7 @@ export default function MyMap({mapStyle}) {
       <div className="h-0 opacity-0">
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
       </div>
-      <div ref={mapContainer} className="map-container rounded-sm overflow-hidden h-96 cursor-grab my_map"/>
+      <div ref={mapContainer} className="map-container rounded-sm overflow-hidden h-96 cursor-grab"/>
     </div>
   );
 }

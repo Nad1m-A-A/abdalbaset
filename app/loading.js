@@ -1,7 +1,7 @@
 function Loading() {
   return (
     <div className="flex items-center justify-center w-screen">
-      <div className="bg-gray-200 py-2 px-5 rounded-lg shadow-md">
+      <div className="rounded-md">
         <svg
           className="animate-spin h-6 w-6 md:h-8 md:w-8 fill-main mx-auto"
           xmlns="http://www.w3.org/2000/svg"

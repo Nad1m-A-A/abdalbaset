@@ -54,7 +54,7 @@ function PreviewImg() {
     <div className="lg:self-start fade_in">
       <Image
         draggable={false}
-        className={`${imgAnimation} mx-auto rounded-sm home_preview_img`}
+        className={`${imgAnimation} mx-auto rounded-sm`}
         src={images[imgNumber].src}
         placeholder="blur"
         blurDataURL={images[imgNumber].placeholder}

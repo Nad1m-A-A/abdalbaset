@@ -11,10 +11,8 @@ function Navigation() {
           <Link href={"/"}>
             <Image
               priority
-              src={"/images/2.png"}
-              placeholder="blur"
-              blurDataURL="/images/low_logo.webp"
-              alt="Abd-Albaset Architect"
+              src={"/images/logo.png"}
+              alt="AB-Designer"
               width={250}
               height={220}
             />

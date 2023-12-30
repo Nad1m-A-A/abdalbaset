@@ -1,5 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+export const metadata = {
+  keywords: [
+    "interior design examples",
+    "landscape design examples",
+    "facade design examples",
+    "villa design",
+    "apartment design",
+    "commercial design",
+    "terrace design",
+  ],
+};
 function page() {
   const projects = [
     {
@@ -59,13 +70,13 @@ function page() {
             key={i}
             href={`/projects/${project.path ? project.path : project.title}`}
           >
-            <div className="group rounded-sm overflow-hidden shadow-md cursor-pointer">
+            <div className="group rounded-sm overflow-hidden shadow-sm cursor-pointer">
               <div className="overflow-hidden project_prev_container">
                 <Image
                   className="project_prev select-none group-hover:scale-110 max-h-56 object-cover"
                   alt={project.title}
                   src={project.image}
-                  placeholder='blur'
+                  placeholder="blur"
                   blurDataURL={project.placeholder}
                   width={300}
                   height={230}
