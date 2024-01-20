@@ -6,7 +6,7 @@ export default function ContactPage() {
   const contactItems = [
     { location: "Dubai - Deira" },
     { phoneNumber: "+971-50-502-5334" },
-    { email: "abdalbasetbali@gmail.com" },
+    { email: "contact@designerab.com" },
   ];
   return (
     <div>
