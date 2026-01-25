@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <div className="space-y-4 w-full">
       <SectionTitle title="Contact" />
-      <div className="w-11/12 space-y-2 fade_in">
+      <div className="space-y-2 fade_in">
         <ul className="leading-10 text-sm text-dark">
           {contactItems.map((item, index) => (
             <li key={index}>

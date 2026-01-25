@@ -6,7 +6,7 @@ import ResponsivePagesLinks from "./ResponsivePagesLinks";
 function Navigation() {
   return (
     <div className="min-w-fit border-b-2 pb-5 lg:border-r-2 lg:pr-10 lg:border-b-0 border-dark">
-      <div className="sticky top-14 flex justify-between items-end lg:flex-col lg:gap-10 lg:items-baseline">
+      <div className="sticky top-14 z-20 flex justify-between items-end lg:flex-col lg:gap-10 lg:items-baseline">
         <Link href={"/"}>
           {/* Visible on small screens */}
           <Image

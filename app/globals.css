@@ -34,17 +34,14 @@ h6 {
     color: #33383B
 }
 
-.responsive_dropdown {
-    width: 80vw;
-}
 
 .responsive_text {
     font-size: 2.5vw;
 }
 
 .responsive_icon {
-    width: 5vw;
-    height: 5vh;
+    width: 7vw;
+    height: 7vh;
 }
 
 .contact_info .popslide {

@@ -9,6 +9,7 @@ function PagesLinks() {
   const [dropDown, setDropDown] = useState(false);
   const pages = [
     { text: "Home", url: "/" },
+    { text: "About", url: "/about" },
     { text: "Projects", url: "/projects" },
     { text: "Journey", url: "/journey" },
     { text: "Services", url: "/services" },

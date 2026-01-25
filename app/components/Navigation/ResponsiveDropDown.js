@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function ResponsiveDropDown({hideDropDown}) {
+function ResponsiveDropDown({ onItemClick, hideDropDown }) {
   const projects = [
     { text: "villa", url: "/projects/villa" },
     { text: "resort", url: "/projects/resort" },
@@ -12,10 +12,12 @@ function ResponsiveDropDown({hideDropDown}) {
     { text: "watch store", url: "/projects/watch_store" },
   ];
   return (
-    <ul className="responsive_dropdown fade_in absolute top-8 bg-gray-900 text-white grid grid-cols-4 gap-3 px-5 py-3 rounded-sm shadow-lg">
+    <ul
+      onClick={() => onItemClick()}
+      className="w-[50vw] p-10 space-y-6 fade_in absolute top-8 bg-gray-900 text-white gap-3 rounded-sm shadow-lg">
       {projects.map((project, i) => {
         return (
-          <li key={i} onClick={hideDropDown}>
+          <li key={i} onClick={() => onItemClick()}>
             <Link href={project.url}>{project.text}</Link>
           </li>
         );

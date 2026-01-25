@@ -56,7 +56,7 @@ function PreviewImg() {
   }, [imgNumber]);
 
   return (
-    <div className="lg:self-start fade_in relative w-full max-w-[700px]">
+    <div className="lg:self-start fade_in relative  w-full max-w-[700px]">
       <div className="relative w-full aspect-[7/4]">
         {images.map((img, i) => (
           <div

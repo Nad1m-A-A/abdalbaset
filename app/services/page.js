@@ -22,22 +22,21 @@ export default function ServicesPage() {
   return (
     <div className="space-y-4">
       <SectionTitle title="Services" />
-      <h3 className="text-right p-1 px-3 mb-1 rounded-sm w-fit text-sm sm:text-base service_title">
-        3D Videos
-      </h3>
-      <div className="rounded-sm w-full overflow-hidden">
-        <video className="w-full h-[400px] object-cover" autoPlay muted loop>
-          <source src="/terrace.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div>
+        <div className="rounded-sm w-full overflow-hidden">
+          <video className="w-full h-[400px] object-cover" autoPlay muted loop>
+            <source src="/terrace.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <h3 className="px-5 py-2 rounded-sm text-sm sm:text-base service_title">
+          3D Videos
+        </h3>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6  lg:mx-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:mx-0">
         {services.map((service, index) => {
           return (
-            <div key={index} className="flex flex-col gap-1 w-fit fade_in">
-              <h3 className="text-right p-1 px-3 rounded-sm w-fit text-sm sm:text-base service_title">
-                {service.title}
-              </h3>
+            <div key={index} className="flex flex-col w-fit fade_in">
               <Image
                 className="rounded-sm h-full object-cover w-full"
                 src={service.image}
@@ -45,6 +44,9 @@ export default function ServicesPage() {
                 width={440}
                 height={250}
               />
+              <h3 className="px-5 py-2 rounded-sm text-sm sm:text-base service_title">
+                {service.title}
+              </h3>
             </div>
           );
         })}

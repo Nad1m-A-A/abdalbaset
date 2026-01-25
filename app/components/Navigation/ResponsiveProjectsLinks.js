@@ -7,14 +7,14 @@ function ResponsiveProjectsLink({ onItemClick }) {
     setDropDown(false);
   };
   return (
-    <li className="relative">
+    <li className="relative text-2xl font-bold">
       <div className=" flex items-center gap-1">
         <Link href={"/projects"} onClick={() => onItemClick()}>Projects</Link>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="24"
+          height="35"
           viewBox="0 -960 960 960"
-          width="20"
+          width="35"
           onClick={() => setDropDown((prev) => !prev)}
           className={`${dropDown ? "rotate-90" : ""} cursor-pointer fill-main`}
         >
@@ -22,7 +22,7 @@ function ResponsiveProjectsLink({ onItemClick }) {
         </svg>
       </div>
 
-      {dropDown && <ResponsiveDropDown hideDropDown={hideDropDown} />}
+      {dropDown && <ResponsiveDropDown onItemClick={onItemClick} hideDropDown={hideDropDown} />}
     </li>
   );
 }

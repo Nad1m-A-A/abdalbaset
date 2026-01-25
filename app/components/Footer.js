@@ -14,19 +14,19 @@ function Footer() {
     { text: "Contact", url: "/contact" },
   ];
 
-  const contactInfo = {
-    location: "Dubai - Deira",
-    phoneNumber: "+971-50-502-5334",
-    email: "contact@designerab.com",
-  };
+  const contactItems = [
+    { location: "Dubai - Deira" },
+    { phoneNumber: "+971-50-502-5334" },
+    { email: "contact@designerab.com" },
+  ];
 
   return (
-    <div className="text-xs p-5 pt-20 lg:text-sm lg:pl-20 border-t-2 border-dark/20">
+    <div className="p-5 pt-20 text-sm lg:pl-20 border-t-2 border-dark/20">
       <div className="grid grid-cols-1 md:grid-cols-2 max-w-2xl gap-8 mb-6">
         {/* Pages Links Column */}
         <div>
-          <h3 className="font-bold mb-3 text-dark">Pages</h3>
-          <ul className="flex flex-col gap-2">
+          <h3 className="font-bold mb-4 text-dark">Pages</h3>
+          <ul className="flex flex-col gap-6 font-bold">
             {pages.map((page, i) => (
               <li key={i}>
                 <Link
@@ -42,17 +42,16 @@ function Footer() {
 
         {/* Contact Info Column */}
         <div>
-          <h3 className="font-bold mb-3 text-dark">Contact</h3>
-          <ul className="flex flex-col gap-2">
-            <li>
-              <Location location={contactInfo.location} />
-            </li>
-            <li>
-              <Phone phoneNumber={contactInfo.phoneNumber} />
-            </li>
-            <li>
-              <Email email={contactInfo.email} />
-            </li>
+          <h3 className="font-bold mb-4 text-dark">Contact</h3>
+          <ul className="leading-10 text-sm text-dark font-bold">
+
+            {contactItems.map((item, index) => (
+              <li key={index}>
+                {item.location && <Location location={item.location} />}
+                {item.phoneNumber && <Phone phoneNumber={item.phoneNumber} />}
+                {item.email && <Email email={item.email} />}
+              </li>
+            ))}
           </ul>
         </div>
       </div>

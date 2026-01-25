@@ -54,10 +54,10 @@ function JourneyPage() {
   };
 
   return (
-    <div className="space-y-4 w-full">
+    <div className="space-y-4 w-fit">
       <SectionTitle title="Journey" />
-      <div className="flex gap-6 flex-col md:flex-row md:items-start fade_in">
-        <div className="overflow-hidden w-fit rounded-sm relative journey_img_container">
+      <div className="flex gap-6 flex-col md:flex-row fade_in">
+        <div className="overflow-hidden w-full rounded-sm relative journey_img_container">
           <Image
             src="/images/building.webp"
             alt="Fascinating building"
@@ -66,8 +66,8 @@ function JourneyPage() {
             placeholder="blur"
             blurDataURL="/images/low_building.webp"
           />
-          <div className={`flex flex-col justify-end absolute z-20 p-4 pb-10 left-0 right-0 top-0 bottom-0 text-light text-right journey_desc ${animateOut ? 'animate_out' : 'animate_in'}`}>
-            <span className=" text-xs sm:text-sm md:text-lg">{timelineItems[selectedYear].year}</span>
+          <div className={`flex flex-col justify-end absolute z-10 p-4 pb-10 left-0 right-0 top-0 bottom-0 text-light journey_desc ${animateOut ? 'animate_out' : 'animate_in'}`}>
+            <span className="text-xs sm:text-sm md:text-lg">{timelineItems[selectedYear].year}</span>
             <h1 className="text-white font-semibold sm:text-xl md:text-2xl">
               {timelineItems[selectedYear].title}
             </h1>
