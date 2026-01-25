@@ -15,7 +15,7 @@ function NavMenu({ onItemClick }) {
     >
       <svg
         onClick={() => onItemClick()}
-        className="responsive_icon fill-main absolute top-16 right-5"
+        className="responsive_icon fill-main absolute top-24 right-5"
         xmlns="http://www.w3.org/2000/svg"
         height="32"
         viewBox="0 -960 960 960"
