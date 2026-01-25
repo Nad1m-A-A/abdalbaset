@@ -10,11 +10,12 @@ function ResponsiveDropDown({ onItemClick, hideDropDown }) {
     { text: "apartment", url: "/projects/apartment" },
     { text: "plant store", url: "/projects/plant_store" },
     { text: "watch store", url: "/projects/watch_store" },
+    { text: "jewellery store", url: "/projects/jewellery_store" },
   ];
   return (
     <ul
       onClick={() => onItemClick()}
-      className="w-[50vw] p-10 space-y-6 fade_in absolute top-8 bg-gray-900 text-white gap-3 rounded-sm shadow-lg">
+      className="w-[50vw] p-10 text-xl space-y-6 fade_in absolute top-8 bg-gray-900 text-white rounded-sm shadow-lg">
       {projects.map((project, i) => {
         return (
           <li key={i} onClick={() => onItemClick()}>
