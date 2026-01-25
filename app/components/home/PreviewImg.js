@@ -40,28 +40,44 @@ function PreviewImg() {
     },
   ];
   const [imgNumber, setImgNumber] = useState(0);
-  const [imgAnimation, setImgAnimation] = useState("");
+  const [activeIndex, setActiveIndex] = useState(0);
+
   useEffect(() => {
-    setInterval(() => {
-      setImgAnimation("home_img_animation");
+    const interval = setInterval(() => {
       setImgNumber((prev) => (prev + 1) % images.length);
-      setTimeout(() => {
-        setImgAnimation("");
-      }, 500);
     }, 3000);
-  }, []);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Update active index when imgNumber changes to trigger crossfade
+  useEffect(() => {
+    setActiveIndex(imgNumber);
+  }, [imgNumber]);
+
   return (
-    <div className="lg:self-start fade_in">
-      <Image
-        draggable={false}
-        className={`${imgAnimation} mx-auto rounded-sm`}
-        src={images[imgNumber].src}
-        placeholder="blur"
-        blurDataURL={images[imgNumber].placeholder}
-        alt={images[imgNumber].alt}
-        width={700}
-        height={400}
-      />
+    <div className="lg:self-start fade_in relative w-full max-w-[700px]">
+      <div className="relative w-full aspect-[7/4]">
+        {images.map((img, i) => (
+          <div
+            key={`img-${i}`}
+            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${i === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              }`}
+          >
+            <Image
+              draggable={false}
+              className="rounded-sm object-cover"
+              src={img.src}
+              placeholder="blur"
+              blurDataURL={img.placeholder}
+              alt={img.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 700px"
+              priority={i === 0}
+            />
+          </div>
+        ))}
+      </div>
       <div className="invisible">
         {images.map((img, i) => {
           return (

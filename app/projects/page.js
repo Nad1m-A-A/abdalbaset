@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SectionTitle from "../components/SectionTitle";
 export const metadata = {
   keywords: [
     "interior design examples",
@@ -63,32 +64,38 @@ function page() {
     },
   ];
   return (
-    <div className="flex flex-wrap justify-center items-start gap-6 fade_in">
-      {projects.map((project, i) => {
-        return (
-          <Link
-            key={i}
-            href={`/projects/${project.path ? project.path : project.title}`}
-          >
-            <div className="group rounded-sm overflow-hidden shadow-sm cursor-pointer">
-              <div className="overflow-hidden project_prev_container">
-                <Image
-                  className="project_prev select-none group-hover:scale-110 max-h-56 object-cover"
-                  alt={project.title}
-                  src={project.image}
-                  placeholder="blur"
-                  blurDataURL={project.placeholder}
-                  width={300}
-                  height={230}
-                />
+    <div className="space-y-4 w-full">
+      <SectionTitle title="Projects" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade_in">
+        {projects.map((project, i) => {
+          return (
+            <Link
+              key={i}
+              href={`/projects/${project.path ? project.path : project.title}`}
+            >
+              <div className="group rounded-sm overflow-hidden shadow-sm cursor-pointer">
+                <div className="overflow-hidden project_prev_container bg-slate-300">
+                  <Image
+                    // className="rounded-sm h-full object-cover w-full"
+                    // src={service.image}
+                    // alt={service.title}
+                    width={440}
+                    height={250}
+                    className="project_prev select-none group-hover:scale-110 w-full max-h-56 object-cover"
+                    alt={project.title}
+                    src={project.image}
+                    placeholder="blur"
+                    blurDataURL={project.placeholder}
+                  />
+                </div>
+                <h3 className="text-sm md:text-base px-5 py-2 capitalize project_title">
+                  {project.title}
+                </h3>
               </div>
-              <h3 className="text-sm md:text-base px-5 py-2 font-semibold capitalize project_title text-end">
-                {project.title}
-              </h3>
-            </div>
-          </Link>
-        );
-      })}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SectionTitle from "../components/SectionTitle";
 export default function ServicesPage() {
   const services = [
     {
@@ -19,27 +20,26 @@ export default function ServicesPage() {
     },
   ];
   return (
-    <div className="m-auto">
-      <div className="w-fit mb-8 m-auto">
-        <h3 className="text-right p-1 px-3 mb-1 rounded-sm w-fit ml-auto text-sm sm:text-base service_title">
-          3D Videos
-        </h3>
-        <div className="rounded-sm overflow-hidden">
-        <video width="905" height="400" autoPlay muted loop>
+    <div className="space-y-4">
+      <SectionTitle title="Services" />
+      <h3 className="text-right p-1 px-3 mb-1 rounded-sm w-fit text-sm sm:text-base service_title">
+        3D Videos
+      </h3>
+      <div className="rounded-sm w-full overflow-hidden">
+        <video className="w-full h-[400px] object-cover" autoPlay muted loop>
           <source src="/terrace.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-fit mx-auto lg:mx-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6  lg:mx-0">
         {services.map((service, index) => {
           return (
             <div key={index} className="flex flex-col gap-1 w-fit fade_in">
-              <h3 className="text-right p-1 px-3 rounded-sm w-fit ml-auto text-sm sm:text-base service_title">
+              <h3 className="text-right p-1 px-3 rounded-sm w-fit text-sm sm:text-base service_title">
                 {service.title}
               </h3>
               <Image
-                className="rounded-sm h-full object-cover"
+                className="rounded-sm h-full object-cover w-full"
                 src={service.image}
                 alt={service.title}
                 width={440}

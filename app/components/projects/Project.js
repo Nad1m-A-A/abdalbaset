@@ -2,7 +2,7 @@
 import classes from './project.module.css'
 import Image from "next/image";
 import { useState } from "react";
-function Project({images : projectImages, title : projectTItle, large = false}) {
+function Project({ images: projectImages, title: projectTItle, large = false }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const changeMainImg = (imgIndex) => {
     setActiveIndex(imgIndex);
@@ -27,13 +27,12 @@ function Project({images : projectImages, title : projectTItle, large = false}) 
         <div className={`${classes.preview_images}`}>
           {projectImages.map((img, i) => {
             return (
-              <div key={i} className={classes.preview_images_animation }>
+              <div key={i} className={classes.preview_images_animation}>
                 <Image
-                placeholder='blur'
-                blurDataURL={img.placeholder}
+                  placeholder='blur'
+                  blurDataURL={img.placeholder}
                   onClick={() => changeMainImg(i)}
-                  className={`${
-                    activeIndex === i ? classes.active_img : ""}`}
+                  className={`${activeIndex === i ? classes.active_img : ""}`}
                   key={i}
                   width={400}
                   height={400}

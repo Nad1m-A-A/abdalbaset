@@ -11,16 +11,27 @@
 /* £ CUSTOM STYLES */
 
 body {
-    background: linear-gradient(140deg, transparent 70%, rgba(197, 191, 102, 0.438));
+    /* background: linear-gradient(140deg, transparent 70%, rgba(197, 191, 102, 0.438)); */
     overflow-x: hidden;
 }
+
 body::-webkit-scrollbar {
-    width: .7rem;
+    width: .4rem;
 }
 
 body::-webkit-scrollbar-thumb {
     background-color: var(--dark-color);
-    border-radius: 3px;
+    border-radius: 0px;
+}
+
+h1,
+h2 h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    color: #33383B
 }
 
 .responsive_dropdown {
@@ -30,6 +41,7 @@ body::-webkit-scrollbar-thumb {
 .responsive_text {
     font-size: 2.5vw;
 }
+
 .responsive_icon {
     width: 5vw;
     height: 5vh;
@@ -55,15 +67,13 @@ body::-webkit-scrollbar-thumb {
     color: #21209C;
 }
 
-.service_title, .project_title {
-    background: linear-gradient(-90deg, white, var(--light-color));
+.service_title,
+.project_title {
+    background: linear-gradient(-90deg, var(--light-color), white);
 }
 
 .home_phrase {
-    color: rgb(255, 255, 255);
-    text-shadow: 0 -2px 15px var(--dark-color);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    color: #33383B;
     position: relative;
     text-transform: capitalize;
     animation: settle 2s;
@@ -74,10 +84,10 @@ body::-webkit-scrollbar-thumb {
 .home_phrase::after {
     content: '';
     position: absolute;
-    width: 94%;
-    height: .07rem;
-    left: 3%;
-    top: 55%;
+    width: 100%;
+    height: .05rem;
+    left: 1%;
+    top: 90%;
     z-index: -10;
     background-color: var(--primary-color);
     animation: race 1.5s ease-in;
@@ -92,12 +102,14 @@ body::-webkit-scrollbar-thumb {
     max-height: 10rem;
     transition: 400ms;
 }
+
 /* £ CUSTOM STYLES */
 
 /* ? ANIMATION */
-.home_img_animation{
+.home_img_animation {
     animation: ping 500ms ease-out;
 }
+
 .fade_in {
     animation: ping 500ms ease-out;
 }
@@ -105,45 +117,56 @@ body::-webkit-scrollbar-thumb {
 .animate_out span {
     animation: animate_out .8s;
 }
-.animate_out h1{
+
+.animate_out h1 {
     animation: animate_out .8s;
 }
-.animate_out p{
+
+.animate_out p {
     animation: animate_out .8s;
 }
+
 .animate_in span {
     animation: animate_in .8s;
 }
-.animate_in h1{
+
+.animate_in h1 {
     animation: animate_in .8s;
 }
-.animate_in p{
+
+.animate_in p {
     animation: animate_in .8s;
 }
+
 @keyframes animate_out {
     from {
         transform: scale(1);
         opacity: 1;
     }
-    to {        
+
+    to {
         transform: scale(.6);
         opacity: 0;
     }
 }
+
 @keyframes animate_in {
     from {
         transform: scale(.6);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
     }
 }
+
 @keyframes ping {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -154,6 +177,7 @@ body::-webkit-scrollbar-thumb {
         transform: translateY(20%);
         opacity: 0;
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -165,6 +189,7 @@ body::-webkit-scrollbar-thumb {
         width: 0%;
         opacity: .5;
     }
+
     to {
         opacity: 1;
         width: 94%;

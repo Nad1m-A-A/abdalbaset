@@ -1,14 +1,9 @@
 import "./globals.css";
 import Navigation from "./components/Navigation/Navigation";
-import { Quicksand} from "next/font/google";
+import { quicksand } from "./fonts";
 import Footer from "./components/Footer";
 import { WebVitals } from "./components/web-vitals";
-export const quicksand = Quicksand({
-  weight: ["300","400","500","600", "700",],
-  style: ["normal"],
-  subsets: ["latin"],
-  display: "block",
-});
+import Overlay from "./components/Overlay";
 
 export const metadata = {
   title: "AB-Designer",
@@ -20,15 +15,25 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <head>
-      <link type="image/png" sizes="16x16" rel="icon" href="images/icons8-building-16.png"/>
+        <link type="image/png" sizes="16x16" rel="icon" href="images/icons8-building-16.png" />
       </head>
-      <body className={`${quicksand.className} select-none bg-main`}>
-        <main className="min-h-screen flex-col flex gap-14 p-5 lg:flex-row lg:pt-16 lg:pl-20">
+      <body
+        className={`${quicksand.className} select-none bg-main`}
+        style={{
+          backgroundImage: "url('/images/bg-creamy.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <Overlay />
+        <main className="min-h-screen flex-col flex gap-14 p-5 lg:flex-row lg:pt-16 lg:pl-20 pb-20">
           <Navigation />
-          <WebVitals/>
+          <WebVitals />
           {children}
         </main>
-          <Footer font={quicksand}/>
+        <Footer font={quicksand} />
       </body>
     </html>
   );
