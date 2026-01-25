@@ -15,7 +15,7 @@ function ResponsiveDropDown({ onItemClick, hideDropDown }) {
   return (
     <ul
       onClick={() => onItemClick()}
-      className="w-[50vw] p-10 text-xl space-y-6 fade_in absolute top-8 bg-gray-900 text-white rounded-sm shadow-lg">
+      className="w-[50vw] p-10 text-xl space-y-6 fade_in absolute top-full left-1/2 mt-4 -translate-x-1/2 bg-[#303636] text-white rounded-sm shadow-lg">
       {projects.map((project, i) => {
         return (
           <li key={i} onClick={() => onItemClick()}>
