@@ -38,7 +38,7 @@
     max-height: 6rem;
     border-radius: 2px;
     box-shadow: 0 0 1px black;
-    animation: squish 1s;
+    /* animation: squish 1s; */
 }
 
 .preview_images div img {
